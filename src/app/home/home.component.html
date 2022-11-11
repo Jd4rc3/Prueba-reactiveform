@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="printData()">
+
+  <div *ngFor="let i of questions">
+    <nombre [controlName]="i.id" *ngIf="i.questionTypeId == 1" [parentForm]="form"></nombre>
+    <input type="text" formControlName="{{i.id}}" [placeholder]="i.text">
+  </div>
+
+
+<!--  <input type="text" formControlName="nombre" name="name" placeholder="Name">-->
+<!--  <input type="text" formControlName="apellido" name="apellido" placeholder="Name">-->
+<!--  <apellido></apellido>-->
+  <input type="submit" value="Submit">
+</form>
